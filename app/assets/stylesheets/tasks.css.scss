@@ -1,0 +1,66 @@
+.box 
+	{
+		float: left;
+		width: 40%;
+		height: 225px;
+		border: 10px solid #000;
+		padding: 5px;
+	}
+
+.addform
+	{
+		border: 2px solid red;
+		width: 660px;
+		padding: 5px;
+	}
+	
+#img1 img 
+	{
+		width: 20px;
+		left: 350px;
+		top: 200px;
+	}
+#img2 img 
+	{
+		width: 20px;
+		left: 10px;
+		top: 200px;
+	}
+#img3 img 
+	{
+		width: 20px;
+		left: 350px;
+	}
+#img4 img 
+	{
+		width: 20px;
+		left: 10px;
+	}
+
+#urgimp 
+		{ 	
+			border-top: 10px solid #FFF; 
+			border-left: 10px solid #FFF; 
+		}
+#noturgimp 
+		{ 	
+			border-top: 10px solid #FFF; 
+			border-right: 10px solid #FFF; 
+		}
+#urgnotimp 
+		{ 	
+			border-bottom: 10px solid #FFF; 
+			border-left: 10px solid #FFF; 
+		}
+#noturgnotimp 
+		{ 	
+			border-bottom: 10px solid #FFF; 
+			border-right: 10px solid #FFF; 
+		}
+
+p { font: 100% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;}
+li { font: 75% "Lucida Grande", "Trebuchet MS", Verdana, sans-serif;}
+
+// Place all the styles related to the tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/

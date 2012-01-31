@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>To Do App</title>
+</head>
+<body>
+	<h1>To Do</h1>
+	<div class="addform">
+		<strong>Add a new task!</strong>
+		<form accept-charset="UTF-8" action="/tasks" class="new_task" id="new_task" method="post">
+			<div style="margin:0;padding:0;display:inline">
+				<input name="utf8" type="hidden" value="&#x2713;" />
+				<input name="authenticity_token" type="hidden" value="VwknQw5mOnIzfoEaa+EGRbqTkrgBF8owHKO4LGwNWTs=" />
+			</div>
+			<label for="task_task">Task</label>: 
+			<input id="task_task" name="task[task]" size="40" type="text" />  
+			<label for="task_priority">Priority</label>: 
+			<select id="task_priority" name="task[priority]">
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option> 
+			</select>
+			<label for="task_status">Status</label>: 
+			<select id="task_status" name="task[status]">
+				<option value="just entered">Just Entered</option>
+				<option value="done">Done</option>
+				<option value="in progress">In Progress</option>
+				<option value="overdue">Overdue</option>
+			</select>
+			<input name="commit" type="submit" value="Create Task" />
+		</form>
+	</div>
+	<br/>
+	
+	<!-- <strong>Edit Task</strong>
+	<form accept-charset="UTF-8" action="/tasks/#" class="edit_task" id="edit_task_5" method="post">
+	<div style="margin:0;padding:0;display:inline">
+	<input name="utf8" type="hidden" value="&#x2713;" />
+	<input name="_method" type="hidden" value="put" />
+	<input name="authenticity_token" type="hidden" value="VwknQw5mOnIzfoEaa+EGRbqTkrgBF8owHKO4LGwNWTs=" />
+	</div>
+	<label for="task_task">Task</label>: 
+	<input id="task_task" name="task[task]" size="40" type="text" value="Take out Trash" />
+	<label for="task_priority">Priority</label>: 
+	<input id="task_priority" name="task[priority]" size="2" type="text" value="1" />
+	<label for="task_status">Status</label>: 
+	<input id="task_status" name="task[status]" size="20" type="text" value="ASAP" />
+	<input name="commit" type="submit" value="Update Task" />
+	</form> -->
+	
+	<div id="urgimp" class="box">
+		<div id="img1">
+			<%= image_tag('numbers-1.jpg') %>
+		</div>
+	<p>Urgent / Important</p>
+	<ul>
+	<% @one_array.each do |one| %>
+	<li><% if one.status == "done" %>
+		 	<strike><%= one.task %></strike> 
+		<% else %> <%= one.task %><% end %> 
+		 -- <%= link_to "Edit", edit_task_url(one.id) %> - <%= link_to(image_tag("delete_1.png"), "tasks/#{one.id}", :method => :delete)%></li>
+	<% end %>
+</ul>
+</div>
+<div id="noturgimp" class="box">
+	<div id="img2">
+		<%= image_tag('numbers-2.jpg') %>
+	</div>
+	<p>Not Urgent / Important</p>
+	<ul>
+		<% @two_array.each do |two| %>
+		<li><% if two.status == "done" %>
+			 	<strike><%= two.task %></strike> 
+			<% else %> <%= two.task %><% end %>-- <%= link_to "Edit", edit_task_url(two.id) %> - <%= link_to(image_tag("delete_1.png"), "tasks/#{two.id}", :method => :delete) %></li>
+		<% end %>
+	</ul>
+</div>
+<div id="urgnotimp" class="box">
+	<div id="img3">
+		<%= image_tag('numbers-3.jpg') %>
+	</div>
+	<p>Urgent / Not Important</p>
+	<ul>
+		<% @three_array.each do |three| %>
+		<li><% if three.status == "done" %>
+			 	<strike><%= three.task %></strike> 
+			<% else %> <%= three.task %><% end %>-- <%= link_to "Edit", edit_task_url(three.id) %> - <%= link_to(image_tag("delete_1.png"), "tasks/#{three.id}", :method => :delete)%></li>
+		<% end %>
+	</ul>
+</div>
+	<div id="noturgnotimp" class="box">
+		<div id="img4">
+			<%= image_tag('numbers-4.jpg') %>
+		</div>
+		<p>Not Urgent / Not Important</p>
+		<ul>
+			<% @four_array.each do |four| %>
+			<li><% if four.status == "done" %>
+				 	<strike><%= four.task %></strike> 
+				<% else %> <%= four.task %><% end %> -- <%= link_to "Edit", edit_task_url(four.id) %> - <%= link_to(image_tag("delete_1.png	"), "tasks/#{four.id}", :method => :delete)%></li>
+			<% end %>
+		</ul>
+	</div>
+</body>
+</html>

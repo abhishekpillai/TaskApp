@@ -1,0 +1,7 @@
+<h1>Task Details</h1>
+
+<p>You have to: <%= @t.task %> </p>
+<p>Priority: <%= @t.priority %> </p>
+<p>Current Status: <%= @t.status %> </p>
+<br/>
+<h3><%= link_to 'Edit', edit_task_url(@t.id) %></h3>

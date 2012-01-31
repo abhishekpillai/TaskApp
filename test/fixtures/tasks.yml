@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  task: MyString
+  priority: 1
+  status: MyString
+
+two:
+  task: MyString
+  priority: 1
+  status: MyString
