@@ -1,0 +1,8 @@
+<div class="taskform">
+<%= form_for @task do |t| %>
+	<%= t.label :task %>: <%= t.text_field :task %>
+	<%= t.label :priority %>: <%= t.collection_select(:priority_id, Priority.all, :id, :p_type) %>
+	<%= t.label :status %>: <%= t.collection_select(:status_id, Status.all, :id, :current) %>
+	<%= t.submit %>
+<% end %>
+</div>

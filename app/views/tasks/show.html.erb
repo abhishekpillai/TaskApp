@@ -1,7 +1,11 @@
-<h1>Task Details</h1>
-
-<p>You have to: <%= @t.task %> </p>
-<p>Priority: <%= @t.priority %> </p>
-<p>Current Status: <%= @t.status %> </p>
-<br/>
-<h3><%= link_to 'Edit', edit_task_url(@t.id) %></h3>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<title>To Do App</title>
+</head>
+<body>
+	<h1>To Do</h1>
+	<%= render 'taskform' %>
+	<br/>
+	<%= render 'print_all_priorities' %>

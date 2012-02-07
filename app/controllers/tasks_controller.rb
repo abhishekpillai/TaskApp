@@ -1,32 +1,19 @@
 class TasksController < ApplicationController
   def index
-    @all_tasks = Task.all
-    @one_array = []
-		@two_array = []
-		@three_array = []
-		@four_array = []
-		@all_tasks.each do |t|
-			if t.priority == 1
-				@one_array << t
-			elsif t.priority == 2
-				@two_array << t
-			elsif t.priority == 3
-				@three_array << t
-			elsif t.priority == 4
-				@four_array << t
-			else
-        print "Prioritize your tasks properly!"
-			end
-		end
+    @all_priorities = Priority.all
     @task = Task.new
+    @show_flag = false
   end
   
   def show
-    @t = Task.find params[:id]
+    @task = Task.new
+    @show_task = Task.find params[:id]
+    @show_flag = true
   end
   
   def edit
     @task = Task.find params[:id]
+    @show_flag = false
   end
   
   def create

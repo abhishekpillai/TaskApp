@@ -1,0 +1,14 @@
+<header><p><u><%= priority_title %></u></p></header>
+<ul>
+	<% priority.tasks.each do |t| %>
+	<li><% if t.status.current == "Done" %>
+		<strike><%= link_to t.task, task_url(t.id) %></strike> 
+		<% else %> <%= link_to t.task, task_url(t.id) %><% end %> 
+		-- <%= link_to "Edit", edit_task_url(t.id) %> - <%= link_to(image_tag("delete_1.png"), "tasks/#{t.id}", :method => :delete)%></li>
+		<ul>
+			<% if @show_flag and (t.id == @show_task.id) %>
+				<li>Status: <%= t.status.current %></li>
+			<% end %>
+		</ul>
+		<% end %>
+</ul>

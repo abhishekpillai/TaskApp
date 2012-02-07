@@ -11,12 +11,25 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120129170812) do
+ActiveRecord::Schema.define(:version => 20120207032626) do
+
+  create_table "priorities", :force => true do |t|
+    t.string   "p_type"
+    t.integer  "quad"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "statuses", :force => true do |t|
+    t.string   "current"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tasks", :force => true do |t|
     t.string   "task"
-    t.integer  "priority"
-    t.string   "status"
+    t.integer  "status_id"
+    t.integer  "priority_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

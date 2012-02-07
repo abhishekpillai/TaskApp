@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  impurg: false
+  impnoturg: false
+  notimpurg: false
+  notimpnoturg: false
+
+two:
+  impurg: false
+  impnoturg: false
+  notimpurg: false
+  notimpnoturg: false

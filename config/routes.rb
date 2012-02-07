@@ -7,6 +7,7 @@ TaskApp::Application.routes.draw do
   put 'tasks/:id' => 'tasks#update', :as => :update_task
   delete 'tasks/:id' => 'tasks#destroy'
   
+  resources :priorities
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

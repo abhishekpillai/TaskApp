@@ -1,0 +1,12 @@
+<div id="urgimp" class="box">
+	<%= render 'print_one_priority', :priority => Priority.find_by_p_type("Urgent and Important"), :priority_title => 'Urgent and Important' %>
+</div>
+<div id="noturgimp" class="box">
+	<%= render 'print_one_priority', :priority => Priority.find_by_p_type("Not Urgent but Important"), :priority_title => 'Not Urgent but Important' %>
+</div>
+<div id="urgnotimp" class="box">
+	<%= render 'print_one_priority', :priority => Priority.find_by_p_type("Urgent but Not Important"), :priority_title => 'Urgent but Not Important' %>
+</div>
+<div id="noturgnotimp" class="box">
+	<%= render 'print_one_priority', :priority => Priority.find_by_p_type("Not Urgent and Not Important"), :priority_title => 'Not Urgent and Not Important' %>
+</div>
